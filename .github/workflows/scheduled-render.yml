@@ -1,0 +1,15 @@
+# .github/workflows/scheduled-builds.yml
+name: Trigger cURL on a CRON Schedule
+
+on:
+  schedule:
+    # Runs "every 10 minute"
+    - cron: '0/10 * * * *'
+jobs:
+  curl_render:
+    name: Trigger cURL
+    runs-on: ubuntu-latest
+    steps:
+      - name: cURL request brook-deta.onrender.com
+        # Hit the onrender endpoint
+        run: curl https://brook-deta.onrender.com/ws

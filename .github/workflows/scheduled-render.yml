@@ -10,6 +10,6 @@ jobs:
     name: Trigger cURL
     runs-on: ubuntu-latest
     steps:
-      - name: cURL request brook-deta.onrender.com
+      - name: cURL request ${{ URL1 }}
         # Hit the onrender endpoint
-        run: curl https://brook-deta.onrender.com/ws
+        run: curl https://${{ URL1 }}/ws

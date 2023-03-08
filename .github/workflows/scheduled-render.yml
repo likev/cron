@@ -9,7 +9,9 @@ jobs:
   curl_render:
     name: Trigger cURL
     runs-on: ubuntu-latest
+    env: # Or as an environment variable
+      URL1: ${{ secrets.URL1 }}
     steps:
-      - name: cURL request ${{ URL1 }}
+      - name: cURL request ${{ env.URL1 }}
         # Hit the onrender endpoint
-        run: curl https://${{ URL1 }}/ws
+        run: curl https://${{ env.URL1 }}/ws

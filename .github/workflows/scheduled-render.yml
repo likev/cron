@@ -11,7 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     env: # Or as an environment variable
       URL1: ${{ secrets.URL1 }}
+      URL2: ${{ secrets.URL2 }}
     steps:
       - name: cURL request ${{ env.URL1 }}
         # Hit the onrender endpoint
         run: curl https://${{ env.URL1 }}/ws
+      - name: cURL request ${{ env.URL2 }}
+        # Hit the onrender endpoint
+        run: curl https://${{ env.URL2 }}/time
